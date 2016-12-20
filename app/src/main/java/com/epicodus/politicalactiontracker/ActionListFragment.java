@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 
 public class ActionListFragment extends Fragment {
 
+//    Interface is used.
     public interface OnActionItemSelectedInterface {
         void onListActionItemSelected(int index);
     }

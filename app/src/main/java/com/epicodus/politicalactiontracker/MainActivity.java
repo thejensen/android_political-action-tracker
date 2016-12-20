@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity implements ActionListFragmen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        Create a new Fragment that displays on the Main Activity if there isn't already a Fragment created -- new fragments would be created if the user goes to landscape view
         ActionListFragment savedFragment = (ActionListFragment) getFragmentManager().findFragmentById(R.id.placeHolder);
         if (savedFragment == null) {
             ActionListFragment fragment = new ActionListFragment();
@@ -22,8 +23,16 @@ public class MainActivity extends AppCompatActivity implements ActionListFragmen
         }
     }
 
+//    List item selected from the actions list creates a new ViewPagerFragment which replaces the previous fragment's place in the placeholder ViewGroup in the Main Activity layout. Neat.
     @Override
     public void onListActionItemSelected(int index) {
         Toast.makeText(MainActivity.this, Actions.names[index], Toast.LENGTH_SHORT).show();
+
+        ViewPagerFragment fragment = new ViewPagerFragment();
+        FragmentManager fragmentManager = getFragmentManager();
+        android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.placeHolder, fragment);
+        fragmentTransaction.commit();
+
     }
 }
