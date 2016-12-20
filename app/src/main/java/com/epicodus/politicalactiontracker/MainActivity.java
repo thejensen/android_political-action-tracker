@@ -1,7 +1,8 @@
 package com.epicodus.politicalactiontracker;
 
-import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
@@ -13,11 +14,11 @@ public class MainActivity extends AppCompatActivity implements ActionListFragmen
         setContentView(R.layout.activity_main);
 
 //        Create a new Fragment that displays on the Main Activity if there isn't already a Fragment created -- new fragments would be created if the user goes to landscape view
-        ActionListFragment savedFragment = (ActionListFragment) getFragmentManager().findFragmentById(R.id.placeHolder);
+        ActionListFragment savedFragment = (ActionListFragment) getSupportFragmentManager().findFragmentById(R.id.placeHolder);
         if (savedFragment == null) {
             ActionListFragment fragment = new ActionListFragment();
-            FragmentManager fragmentManager = getFragmentManager();
-            android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.add(R.id.placeHolder, fragment);
             fragmentTransaction.commit();
         }
@@ -29,10 +30,11 @@ public class MainActivity extends AppCompatActivity implements ActionListFragmen
         Toast.makeText(MainActivity.this, Actions.names[index], Toast.LENGTH_SHORT).show();
 
         ViewPagerFragment fragment = new ViewPagerFragment();
-        FragmentManager fragmentManager = getFragmentManager();
-        android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.placeHolder, fragment);
+//        Adding the fragment to the backstack, so the back button goes from the ViewPagerFragment to the ActivityListFragment
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
-
     }
 }
