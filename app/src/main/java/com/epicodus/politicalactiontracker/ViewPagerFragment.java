@@ -24,12 +24,20 @@ public class ViewPagerFragment extends Fragment {
         getActivity().setTitle(Actions.names[index]);
         View view = inflater.inflate(R.layout.fragment_view_pager, container, false);
 
+        final ActionDescriptionFragment actionDescriptionFragment = new ActionDescriptionFragment();
+        final ActionActFragment actionActFragment = new ActionActFragment();
+
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewPager);
 //        getChildFragmentManager is used when dealing with fragments within fragments
         viewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                return null;
+                return position == 0 ? actionDescriptionFragment : actionActFragment;
+//                if (position == 0) {
+//                    return actionDescriptionFragment;
+//                } else {
+//                    return actionActFragment;
+//                }
             }
 
 //            How many tabs in the pager! 2!
