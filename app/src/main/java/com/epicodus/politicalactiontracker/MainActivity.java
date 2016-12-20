@@ -12,12 +12,14 @@ public class MainActivity extends AppCompatActivity implements ActionListFragmen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ActionListFragment fragment = new ActionListFragment();
-        FragmentManager fragmentManager = getFragmentManager();
-        android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.placeHolder, fragment);
-        fragmentTransaction.commit();
-
+        ActionListFragment savedFragment = (ActionListFragment) getFragmentManager().findFragmentById(R.id.placeHolder);
+        if (savedFragment == null) {
+            ActionListFragment fragment = new ActionListFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.add(R.id.placeHolder, fragment);
+            fragmentTransaction.commit();
+        }
     }
 
     @Override
