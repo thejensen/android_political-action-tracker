@@ -2,6 +2,7 @@ package com.epicodus.politicalactiontracker;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -33,11 +34,6 @@ public class ViewPagerFragment extends Fragment {
             @Override
             public Fragment getItem(int position) {
                 return position == 0 ? actionDescriptionFragment : actionActFragment;
-//                if (position == 0) {
-//                    return actionDescriptionFragment;
-//                } else {
-//                    return actionActFragment;
-//                }
             }
 
 //            How many tabs in the pager! 2!
@@ -45,7 +41,15 @@ public class ViewPagerFragment extends Fragment {
             public int getCount() {
                 return 2;
             }
+
+            @Override
+            public CharSequence getPageTitle(int position) {
+                return position == 0 ? "Description" : "Act";
+            }
         });
+
+        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
+        tabLayout.setupWithViewPager(viewPager);
 
         return view;
     }
