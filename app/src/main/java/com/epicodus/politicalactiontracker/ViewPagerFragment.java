@@ -26,7 +26,11 @@ public class ViewPagerFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_view_pager, container, false);
 
         final ActionDescriptionFragment actionDescriptionFragment = new ActionDescriptionFragment();
+
         final ActionActFragment actionActFragment = new ActionActFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt(KEY_ACTION_INDEX, index);
+        actionActFragment.setArguments(bundle);
 
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewPager);
 //        getChildFragmentManager is used when dealing with fragments within fragments
