@@ -17,8 +17,6 @@ import static android.support.v7.widget.RecyclerView.ViewHolder;
  */
 
 public class ActionListAdapter extends RecyclerView.Adapter {
-    @Bind(R.id.actionItemTextView) TextView mActionItemTextView;
-    @Bind(R.id.actionItemImageView) ImageView mActionItemImageView;
     private final ActionListFragment.OnActionItemSelectedInterface mListener;
 
     public ActionListAdapter(ActionListFragment.OnActionItemSelectedInterface listener) {
@@ -42,7 +40,9 @@ public class ActionListAdapter extends RecyclerView.Adapter {
         return Actions.names.length;
     }
 
-    private class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        @Bind(R.id.actionItemTextView) TextView mActionItemTextView;
+        @Bind(R.id.actionItemImageView) ImageView mActionItemImageView;
         private int mIndex;
 
         public ListViewHolder(View itemView) {

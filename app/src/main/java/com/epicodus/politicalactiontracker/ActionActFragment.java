@@ -27,17 +27,18 @@ public class ActionActFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_action_act, container, false);
         ButterKnife.bind(this, view);
 
-        String shareable = Actions.iDidThis[index];
-        setUpCheckBoxes(shareable, linearLayout);
+        String iDidThis = Actions.iDidThis[index];
+//        TODO: save state of checkboxes in landscape without an arraylist?
+        setUpCheckBoxes(iDidThis, linearLayout);
 
         return view;
     }
 
-    private void setUpCheckBoxes(String shareable, ViewGroup container) {
+    private void setUpCheckBoxes(String iDidThis, ViewGroup container) {
         CheckBox checkBox = new CheckBox(getActivity());
         checkBox.setPadding(8, 16, 8, 16);
         checkBox.setTextSize(20f);
-        checkBox.setText(shareable);
+        checkBox.setText(iDidThis);
         container.addView(checkBox);
     }
 }
