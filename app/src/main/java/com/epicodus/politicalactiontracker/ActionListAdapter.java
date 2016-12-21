@@ -37,7 +37,7 @@ public class ActionListAdapter extends RecyclerView.Adapter {
     @Override
     public int getItemCount() {
 //        TODO: Someday soon the names array will NOT be sufficient to populate the recyclerview, once I start adding them to the database like a databoss.
-        return Actions.names.length;
+        return Actions.name.length;
     }
 
     public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -53,7 +53,7 @@ public class ActionListAdapter extends RecyclerView.Adapter {
 
         public void bindView(int position) {
             mIndex = position;
-            mActionItemTextView.setText(Actions.names[position]);
+            mActionItemTextView.setText(Actions.name[position]);
             mActionItemImageView.setImageResource(Actions.resourceIds[position]);
 //            TODO: Add more stuff here...
         }

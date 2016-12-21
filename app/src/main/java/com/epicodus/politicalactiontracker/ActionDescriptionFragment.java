@@ -24,6 +24,7 @@ public class ActionDescriptionFragment extends Fragment {
     @Bind(R.id.causeTextView) TextView mCauseTextView;
     @Bind(R.id.linkTextView) TextView mLinkTextView;
     @Bind(R.id.descriptionTextView) TextView mDescriptionTextView;
+    @Bind(R.id.locationTextView) TextView mLocationTextView;
 
 
     @Nullable
@@ -34,12 +35,13 @@ public class ActionDescriptionFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         mActionImageView.setImageResource(Actions.resourceIds[index]);
-        mActionNameTextView.setText(Actions.names[index]);
+        mActionNameTextView.setText(Actions.name[index]);
         mDateTextView.setText(Actions.date[index]);
         mActionCategoryTextView.setText(Actions.categoryAction[index]);
         mCauseTextView.setText(Actions.categoryCause[index]);
         mLinkTextView.setText(Actions.link[index]);
         mDescriptionTextView.setText(Actions.description[index]);
+        mLocationTextView.setText(Actions.location[index]);
 
         return view;
     }

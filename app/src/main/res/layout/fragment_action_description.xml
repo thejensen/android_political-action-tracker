@@ -42,17 +42,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="01/01/17"
-                android:id="@+id/dateTextView"
-                android:layout_alignTop="@+id/actionNameTextView"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:textColor="@color/colorAccent"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="Cause"
                 android:id="@+id/causeTextView"
                 android:layout_below="@+id/actionNameTextView"
@@ -71,49 +60,75 @@
                 android:textStyle="italic"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="City, ST"
+                android:id="@+id/locationTextView"
+                android:layout_alignTop="@+id/causeTextView"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Date Available"
+                android:id="@+id/dateTextView"
+                android:layout_alignTop="@+id/actionCategoryTextView"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
-                android:orientation="vertical"
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_above="@+id/saveActionButton"
-                android:paddingLeft="30dp"
-                android:paddingTop="20dp"
-                android:paddingRight="30dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Go to Event Page"
-                    android:id="@+id/linkTextView"
-                    android:drawablePadding="4dp"
-                    android:textColor="@android:color/white"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center" />
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_above="@+id/saveActionButton"
+                    android:paddingLeft="30dp"
+                    android:paddingTop="20dp"
+                    android:paddingRight="30dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Like many of you, I am deeply angered and motivated by the message our country sent to women on Tuesday. This inauguration day, women will rise. I have reserved Magnuson Park (on January 20th) to host a RACE FOR OUR RIGHTS fivek (fun run/walk). All proceeds from this race will go directly to Planned Parenthood. Register here for $20: https://endurancecui.active.com/new/events/40289154/priceCategories/40278951/primaryForm?_p=6128281555138528 Donate to the GoFundMe here: https://www.gofundme.com/race-for-our-rights I am acting in my capacity as a community member, not affiliated with any organization."
-                    android:drawablePadding="4dp"
-                    android:id="@+id/descriptionTextView"
-                    android:textColor="@android:color/white"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center_vertical"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Go to Event Page"
+                        android:id="@+id/linkTextView"
+                        android:drawablePadding="4dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Like many of you, I am deeply angered and motivated by the message our country sent to women on Tuesday. This inauguration day, women will rise. I have reserved Magnuson Park (on January 20th) to host a RACE FOR OUR RIGHTS fivek (fun run/walk). All proceeds from this race will go directly to Planned Parenthood. Register here for $20: https://endurancecui.active.com/new/events/40289154/priceCategories/40278951/primaryForm?_p=6128281555138528 Donate to the GoFundMe here: https://www.gofundme.com/race-for-our-rights I am acting in my capacity as a community member, not affiliated with any organization."
+                        android:drawablePadding="4dp"
+                        android:id="@+id/descriptionTextView"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="50dp"
+                        android:gravity="center_vertical"/>
+
+                </LinearLayout>
+            </ScrollView>
 
             <Button
                 android:layout_width="match_parent"
