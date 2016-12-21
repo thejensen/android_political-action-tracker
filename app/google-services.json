@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "26296396697",
+    "firebase_url": "https://politicalactiontracker.firebaseio.com",
+    "project_id": "politicalactiontracker",
+    "storage_bucket": "politicalactiontracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26296396697:android:62bb70a40130d1e3",
+        "android_client_info": {
+          "package_name": "com.epicodus.politicalactiontracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26296396697-r7kv1ur9r3tni6vb1cstifm32i04j384.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.epicodus.politicalactiontracker",
+            "certificate_hash": "C3345B69F729B8B69404D31658BC3DAE5800307C"
+          }
+        },
+        {
+          "client_id": "26296396697-b3dee4pvkn02bh9qhljkqae4tngb29ue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc87cfI-bPNhc0bRatid9xC1-rsWrK_3U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26296396697-b3dee4pvkn02bh9qhljkqae4tngb29ue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
