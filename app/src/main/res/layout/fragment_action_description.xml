@@ -109,7 +109,7 @@
                         android:text="Go to Event Page"
                         android:id="@+id/linkTextView"
                         android:drawablePadding="4dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/colorAccent"
                         android:textSize="15sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="10dp"

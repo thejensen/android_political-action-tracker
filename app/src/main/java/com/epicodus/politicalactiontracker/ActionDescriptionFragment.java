@@ -1,5 +1,7 @@
 package com.epicodus.politicalactiontracker;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,7 +18,7 @@ import butterknife.ButterKnife;
  * Created by jensese on 12/20/16.
  */
 
-public class ActionDescriptionFragment extends Fragment {
+public class ActionDescriptionFragment extends Fragment implements View.OnClickListener {
     @Bind(R.id.actionImageView) ImageView mActionImageView;
     @Bind(R.id.actionNameTextView) TextView mActionNameTextView;
     @Bind(R.id.dateTextView) TextView mDateTextView;
@@ -39,10 +41,21 @@ public class ActionDescriptionFragment extends Fragment {
         mDateTextView.setText(Actions.date[index]);
         mActionCategoryTextView.setText(Actions.categoryAction[index]);
         mCauseTextView.setText(Actions.categoryCause[index]);
-        mLinkTextView.setText(Actions.link[index]);
         mDescriptionTextView.setText(Actions.description[index]);
         mLocationTextView.setText(Actions.location[index]);
 
+        mLinkTextView.setOnClickListener(this);
+
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        int index = getArguments().getInt(ViewPagerFragment.KEY_DESCRIPTION_INDEX);
+
+        if (v == mLinkTextView) {
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Actions.link[index]));
+            startActivity(webIntent);
+        }
     }
 }
