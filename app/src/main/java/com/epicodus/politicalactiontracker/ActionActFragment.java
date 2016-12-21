@@ -9,24 +9,23 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
  * Created by jensese on 12/20/16.
  */
 
 public class ActionActFragment extends Fragment {
-
+    @Bind(R.id.actionActLayout) LinearLayout linearLayout;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 //        This bundle comes from the ViewPagerFragment!
         int index = getArguments().getInt(ViewPagerFragment.KEY_ACTION_INDEX);
-
         View view = inflater.inflate(R.layout.fragment_action_act, container, false);
-
-        LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.actionActLayout);
-
-
+        ButterKnife.bind(this, view);
 
         String shareable = Actions.iDidThis[index];
         setUpCheckBoxes(shareable, linearLayout);

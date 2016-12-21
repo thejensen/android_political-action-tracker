@@ -9,11 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
  * Created by jensese on 12/20/16.
  */
 
 public class ActionListFragment extends Fragment {
+    @Bind(R.id.actionListRecyclerView) RecyclerView mActionListRecyclerView;
 
 //    Interface is used.
     public interface OnActionItemSelectedInterface {
@@ -25,12 +29,12 @@ public class ActionListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         OnActionItemSelectedInterface listener = (OnActionItemSelectedInterface) getActivity();
         View view = inflater.inflate(R.layout.action_fragment_list, container, false);
+        ButterKnife.bind(this, view);
 
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.actionListRecyclerView);
         ActionListAdapter actionListAdapter = new ActionListAdapter(listener);
-        recyclerView.setAdapter(actionListAdapter);
+        mActionListRecyclerView.setAdapter(actionListAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
+        mActionListRecyclerView.setLayoutManager(layoutManager);
 
         return view;
     }
