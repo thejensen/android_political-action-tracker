@@ -4,7 +4,7 @@ package com.epicodus.politicalactiontracker;
  * Created by jensese on 12/20/16.
  */
 
-public class Actions {
+public class Action {
     public static String[] name = new String[]{"Race for our Rights 5K", "RAIN International's Concert for Unity", "Letters to the Editor - East Side"};
     public static String[] location = new String[]{"Portland, OR", "Portland, OR", "Portland, OR"};
     public static String[] link = new String[]{"https://endurancecui.active.com/new/events/40289154/priceCategories/40278951/primaryForm?_p=6128281555138528","https://www.eventbrite.com/e/rain-internationals-concert-for-unity-tickets-29617140665?aff=efbnreg", "https://www.meetup.com/Pantsuit-Nation-Portland/events/236199507/"};
@@ -18,3 +18,67 @@ public class Actions {
     public static int[] impactAssessment = new int[]{3, 4, 2,};
 
 }
+
+//public class Action {
+//    private String mName;
+//    private String mLocation;
+//    private String mLink;
+//    private String mDate;
+//    private String mDescription;
+//    private int mResourceIds;
+//    private String mCategoryCause;
+//    private String mCategoryAction;
+//    private int mPrice;
+//    private String mIDidThis;
+//
+//    public Action(String mName, String mLocation, String mLink, String mDate, String mDescription, int mResourceIds, String mCategoryCause, String mCategoryAction, int mPrice, String mIDidThis, int mImpactAssessment) {
+//        this.mName = mName;
+//        this.mLocation = mLocation;
+//        this.mLink = mLink;
+//        this.mDate = mDate;
+//        this.mDescription = mDescription;
+//        this.mResourceIds = mResourceIds;
+//        this.mCategoryCause = mCategoryCause;
+//        this.mCategoryAction = mCategoryAction;
+//        this.mPrice = mPrice;
+//    }
+//
+//    public String getName() {
+//        return mName;
+//    }
+//
+//    public String getLocation() {
+//        return mLocation;
+//    }
+//
+//    public String getLink() {
+//        return mLink;
+//    }
+//
+//    public String getDate() {
+//        return mDate;
+//    }
+//
+//    public String getDescription() {
+//        return mDescription;
+//    }
+//
+//    public int getResourceIds() {
+//        return mResourceIds;
+//    }
+//
+//    public String getCategoryCause() {
+//        return mCategoryCause;
+//    }
+//
+//    public String getCategoryAction() {
+//        return mCategoryAction;
+//    }
+//
+//    public int getPrice() {
+//        return mPrice;
+//    }
+//
+//    public String getIDidThis() {
+//        return mIDidThis;
+//    }
