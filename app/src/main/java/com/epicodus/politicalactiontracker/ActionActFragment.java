@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -18,6 +19,7 @@ import butterknife.ButterKnife;
 
 public class ActionActFragment extends Fragment {
     @Bind(R.id.actionActLayout) LinearLayout linearLayout;
+    @Bind(R.id.linkTextView) TextView mLinkTextView;
 
     @Nullable
     @Override
@@ -30,6 +32,7 @@ public class ActionActFragment extends Fragment {
         String iDidThis = Actions.iDidThis[index];
 //        TODO: save state of checkboxes in landscape without an arraylist?
         setUpCheckBoxes(iDidThis, linearLayout);
+        mLinkTextView.setText(Actions.link[index]);
 
         return view;
     }

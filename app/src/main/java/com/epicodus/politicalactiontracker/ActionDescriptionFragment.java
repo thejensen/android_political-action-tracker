@@ -6,16 +6,28 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 /**
  * Created by jensese on 12/20/16.
  */
 
 public class ActionDescriptionFragment extends Fragment {
+    @Bind(R.id.actionImageView)
+    ImageView mActionImageView;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        int index = getArguments().getInt(ViewPagerFragment.KEY_DESCRIPTION_INDEX);
         View view = inflater.inflate(R.layout.fragment_action_description, container, false);
+        ButterKnife.bind(this, view);
+
+        mActionImageView.setImageResource(Actions.resourceIds[index]);
+
         return view;
     }
 }
