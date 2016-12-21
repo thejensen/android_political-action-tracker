@@ -14,6 +14,8 @@ import android.widget.LinearLayout;
  */
 
 public class ActionActFragment extends Fragment {
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -23,6 +25,9 @@ public class ActionActFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_action_act, container, false);
 
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.actionActLayout);
+
+
+
         String shareable = Actions.iDidThis[index];
         setUpCheckBoxes(shareable, linearLayout);
 
