@@ -36,13 +36,13 @@ public class ActionDescriptionFragment extends Fragment implements View.OnClickL
         View view = inflater.inflate(R.layout.fragment_action_description, container, false);
         ButterKnife.bind(this, view);
 
-        mActionImageView.setImageResource(Actions.resourceIds[index]);
-        mActionNameTextView.setText(Actions.name[index]);
-        mDateTextView.setText(Actions.date[index]);
-        mActionCategoryTextView.setText(Actions.categoryAction[index]);
-        mCauseTextView.setText(Actions.categoryCause[index]);
-        mDescriptionTextView.setText(Actions.description[index]);
-        mLocationTextView.setText(Actions.location[index]);
+        mActionImageView.setImageResource(Action.resourceIds[index]);
+        mActionNameTextView.setText(Action.name[index]);
+        mDateTextView.setText(Action.date[index]);
+        mActionCategoryTextView.setText(Action.categoryAction[index]);
+        mCauseTextView.setText(Action.categoryCause[index]);
+        mDescriptionTextView.setText(Action.description[index]);
+        mLocationTextView.setText(Action.location[index]);
 
         mLinkTextView.setOnClickListener(this);
 
@@ -54,7 +54,7 @@ public class ActionDescriptionFragment extends Fragment implements View.OnClickL
         int index = getArguments().getInt(ViewPagerFragment.KEY_DESCRIPTION_INDEX);
 
         if (v == mLinkTextView) {
-            Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Actions.link[index]));
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Action.link[index]));
             startActivity(webIntent);
         }
     }

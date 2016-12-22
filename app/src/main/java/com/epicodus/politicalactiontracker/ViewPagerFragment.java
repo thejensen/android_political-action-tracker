@@ -23,7 +23,7 @@ public class ViewPagerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 //        Receive object in the Bundle depending on the index of the click in the list of actions
         int index = getArguments().getInt(KEY_ACTION_INDEX);
-        getActivity().setTitle(Actions.name[index]);
+        getActivity().setTitle(Action.name[index]);
         View view = inflater.inflate(R.layout.fragment_view_pager, container, false);
 
         final ActionDescriptionFragment actionDescriptionFragment = new ActionDescriptionFragment();

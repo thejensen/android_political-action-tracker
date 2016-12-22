@@ -29,10 +29,10 @@ public class ActionActFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_action_act, container, false);
         ButterKnife.bind(this, view);
 
-        String iDidThis = Actions.iDidThis[index];
+        String iDidThis = Action.iDidThis[index];
 //        TODO: save state of checkboxes in landscape without an arraylist?
         setUpCheckBoxes(iDidThis, linearLayout);
-        mLinkTextView.setText(Actions.link[index]);
+        mLinkTextView.setText(Action.link[index]);
 
         return view;
     }
