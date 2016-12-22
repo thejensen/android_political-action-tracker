@@ -45,5 +45,4 @@ public class MainActivity extends AppCompatActivity implements ActionListFragmen
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
-
 }
